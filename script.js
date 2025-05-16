@@ -29,5 +29,15 @@ function camelizeV2(str) {
   return words.join('');
 }
 
+function camelizeV3(str) {
+  return str
+    .split('-')
+    .map(
+      (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join('');
+}
+
 console.log(camelize('hello-world-i-am-xhubbot'));
 console.log(camelizeV2('hello-world-i-am-xhubbot'));
+console.log(camelizeV3('hello-world-i-am-xhubbot'));
